@@ -9,9 +9,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    @IBAction func adictionar(){
+        let alimento:String = "Frango"
+        let nota:String = "4"
+        print("O almento \(alimento) foi classificado como \(nota) ")
     }
 
 
