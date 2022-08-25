@@ -8,10 +8,13 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet var name:UITextField!
+    @IBOutlet var happiness:UITextField!
 
     @IBAction func adictionar(){
-        let alimento:String = "Frango"
-        let nota:String = "4"
+        let alimento:String = name.text!
+        let nota:String = happiness.text!
         print("O almento \(alimento) foi classificado como \(nota) ")
     }
 
