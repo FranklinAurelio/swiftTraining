@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16B4E8E828C38988001C9212 /* Snack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B4E8E728C38988001C9212 /* Snack.swift */; };
+		16B4E8EA28C38A0F001C9212 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B4E8E928C38A0F001C9212 /* Item.swift */; };
 		16DD2A5B28B5754E00C71691 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DD2A5A28B5754E00C71691 /* AppDelegate.swift */; };
 		16DD2A5D28B5754E00C71691 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DD2A5C28B5754E00C71691 /* SceneDelegate.swift */; };
 		16DD2A5F28B5754E00C71691 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DD2A5E28B5754E00C71691 /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		16B4E8E728C38988001C9212 /* Snack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snack.swift; sourceTree = "<group>"; };
+		16B4E8E928C38A0F001C9212 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		16DD2A5728B5754E00C71691 /* introductio-to-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "introductio-to-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		16DD2A5A28B5754E00C71691 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16DD2A5C28B5754E00C71691 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +41,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		16B4E8EB28C38AB3001C9212 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				16B4E8E728C38988001C9212 /* Snack.swift */,
+				16B4E8E928C38A0F001C9212 /* Item.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		16B4E8EC28C38AE3001C9212 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				16DD2A5E28B5754E00C71691 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		16B4E8ED28C38B39001C9212 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				16DD2A6028B5754E00C71691 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		16DD2A4E28B5754E00C71691 = {
 			isa = PBXGroup;
 			children = (
@@ -58,8 +87,9 @@
 			children = (
 				16DD2A5A28B5754E00C71691 /* AppDelegate.swift */,
 				16DD2A5C28B5754E00C71691 /* SceneDelegate.swift */,
-				16DD2A5E28B5754E00C71691 /* ViewController.swift */,
-				16DD2A6028B5754E00C71691 /* Main.storyboard */,
+				16B4E8ED28C38B39001C9212 /* Views */,
+				16B4E8EB28C38AB3001C9212 /* Models */,
+				16B4E8EC28C38AE3001C9212 /* Controllers */,
 				16DD2A6328B5754F00C71691 /* Assets.xcassets */,
 				16DD2A6528B5754F00C71691 /* LaunchScreen.storyboard */,
 				16DD2A6828B5754F00C71691 /* Info.plist */,
@@ -138,8 +168,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16B4E8EA28C38A0F001C9212 /* Item.swift in Sources */,
 				16DD2A5F28B5754E00C71691 /* ViewController.swift in Sources */,
 				16DD2A5B28B5754E00C71691 /* AppDelegate.swift in Sources */,
+				16B4E8E828C38988001C9212 /* Snack.swift in Sources */,
 				16DD2A5D28B5754E00C71691 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,6 +319,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6NLKWTB739;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "introductio-to-swift/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -314,6 +347,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6NLKWTB739;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "introductio-to-swift/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
