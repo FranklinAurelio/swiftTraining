@@ -11,6 +11,8 @@ class ViewController: UIViewController {
     
     @IBOutlet var name:UITextField?
     @IBOutlet var happiness:UITextField?
+    
+    var tableViewController: SnackTableViewController?
 
     @IBAction func adictionar(){
         
@@ -34,6 +36,10 @@ class ViewController: UIViewController {
         }
         let snack = Snack(nameInit: snackName, happynesInit: happy)
         print("O almento \(snack.name) foi classificado como \(snack.happynes) ")
+        
+        tableViewController?.add(snack)
+        
+        navigationController?.popViewController(animated: true)
     }
 
 
