@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class SnackTableViewController: UITableViewController{
+class SnackTableViewController: UITableViewController, AddSnackDelegate{
     var snacks: [Snack] = [Snack(nameInit: "fish", happynesInit: 8),
                            Snack(nameInit: "sushi", happynesInit: 7),
                            Snack(nameInit: "temaki", happynesInit: 6)]
@@ -32,7 +32,7 @@ class SnackTableViewController: UITableViewController{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "add" {
             if let  viewController = segue.destination as? ViewController{
-                viewController.tableViewController = self
+                viewController.delegate = self
             }
         }
         

@@ -12,9 +12,10 @@ class Snack: NSObject {
     var happynes:Int
     var itens:Array<Item> = []
        
-    init(nameInit:String, happynesInit:Int) {
+    init(nameInit:String, happynesInit:Int, itensInit:[Item] = []) {
         self.name = nameInit
         self.happynes = happynesInit
+        self.itens = itensInit
     }
        
     func sumCalories() -> Double {
