@@ -21,7 +21,23 @@ class SnackTableViewController: UITableViewController, AddSnackDelegate{
         let cell: UITableViewCell = UITableViewCell(style: .default, reuseIdentifier: nil)
         let localSnack: Snack = snacks[indexPath.row]
         cell.textLabel?.text = localSnack.name
+        
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(showDetails(_:)))
+        cell.addGestureRecognizer(longPress)
+        
         return cell
+    }
+    
+    @objc func showDetails(_ gesture: UILongPressGestureRecognizer){
+        if gesture.state == .began{
+            let view = gesture.view as! UITableViewCell
+            
+            guard let indexPath = tableView.indexPath(for: view) else{
+                return
+            }
+            
+            var longPressSnacks: Snack = snacks[indexPath.row]
+        }
     }
     
     func add(_ snackIn:Snack){
