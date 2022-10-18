@@ -25,4 +25,12 @@ class Snack: NSObject {
         }
         return sum
     }
+    
+    func details() -> String{
+        var message = "happyness \(happynes)"
+        for item in itens{
+            message += ", \(item.nameItem) - calories:  \(item.calories) "
+        }
+        return message
+    }
 }
