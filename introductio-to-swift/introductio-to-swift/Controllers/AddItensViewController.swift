@@ -43,7 +43,11 @@ class AddItensViewController: UIViewController {
         guard let itemName = nameItem?.text else{ return }
         guard let itemCalorie = caloriesItem?.text, let calorie = Double(itemCalorie) else{return}
         let item: Item = Item(nameItemDeclaration: itemName, caloriesDeclaration: calorie)
-        delegate?.add(item)
+        //delegate?.add(item)
+        guard let delegateValue = delegate else{
+            return
+        }
+        delegateValue.add(item)
         navigationController?.popViewController(animated: true)
     }
 }

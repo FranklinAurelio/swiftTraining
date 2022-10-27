@@ -43,7 +43,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func add(_ item: Item) {
         itens.append(item)
-        addItemTableView?.reloadData()
+        guard let addItemValue = addItemTableView else{
+            let alertError:UIAlertController = UIAlertController(title: "Sorry!", message: "could not update the list ", preferredStyle: .alert)
+            let ok:UIAlertAction = UIAlertAction(title: "Ok", style: .cancel)
+            alertError.addAction(ok)
+            return present(alertError, animated: true)
+        }
+        addItemValue.reloadData()
     }
     
     //MARK: - UItableViewDataSource

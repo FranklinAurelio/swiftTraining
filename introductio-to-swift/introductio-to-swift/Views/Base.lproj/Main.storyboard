@@ -94,9 +94,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Pa-XW-Q4b">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Pa-XW-Q4b">
                                 <rect key="frame" x="142" y="794" width="130" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="ou1-en-uwX"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Adicionar"/>
                                 <connections>
@@ -125,7 +127,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="BzH-RV-FLY"/>
                     <connections>
-                        <outlet property="addItemTableView" destination="0Vb-pS-zZk" id="RTq-TX-q7C"/>
+                        <outlet property="addItemTableView" destination="0Vb-pS-zZk" id="xfk-oL-QPo"/>
                         <outlet property="happiness" destination="hVk-mI-cdo" id="6Z0-nW-XsT"/>
                         <outlet property="name" destination="uUf-O8-jqu" id="qYe-cK-ob9"/>
                     </connections>

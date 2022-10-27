@@ -36,7 +36,7 @@ class SnackTableViewController: UITableViewController, AddSnackDelegate{
                 return
             }
             
-            var longPressSnacks: Snack = snacks[indexPath.row]
+            let longPressSnacks: Snack = snacks[indexPath.row]
             
             let alertSnack: UIAlertController = UIAlertController(title: longPressSnacks.name, message: longPressSnacks.details(), preferredStyle: .alert)
             let buttonCancel: UIAlertAction = UIAlertAction(title: "cancel", style: .cancel, handler: nil)
