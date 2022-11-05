@@ -44,10 +44,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func add(_ item: Item) {
         itens.append(item)
         guard let addItemValue = addItemTableView else{
-            let alertError:UIAlertController = UIAlertController(title: "Sorry!", message: "could not update the list ", preferredStyle: .alert)
-            let ok:UIAlertAction = UIAlertAction(title: "Ok", style: .cancel)
-            alertError.addAction(ok)
-            return present(alertError, animated: true)
+            return Alert(controller: self).showAlert(titleStr: "Sorry!", message: "could not update the list ")
         }
         addItemValue.reloadData()
     }
@@ -83,6 +80,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     
+    func getSnackToForm() -> Snack?{
+        guard let snackName = name?.text else{
+            return nil
+        }
+        guard let happyValue = happiness?.text, let happy = Int(happyValue) else{
+            return nil
+        }
+        let snack = Snack(nameInit: snackName, happynesInit: happy, itensInit: selectedItens)
+        
+        return snack
+
+    }
+    
     //MARK: - IBActions
     @IBAction func adictionar(){
         
@@ -98,16 +108,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 //
 //
 //        }
-        guard let snackName = name?.text else{
-            return
-        }
-        guard let happyValue = happiness?.text, let happy = Int(happyValue) else{
-            return
-        }
-        let snack = Snack(nameInit: snackName, happynesInit: happy, itensInit: selectedItens)
-        print("O almento \(snack.name) foi classificado como \(snack.happynes) ")
         
-        delegate?.add(snack)
+        guard let snackIsntNull  = getSnackToForm() else{
+            Alert(controller: self).showAlert(message: "Error to get snack")
+            return
+        }
+        guard let delegateIsntNull = delegate else{
+            return
+        }
+                
+        delegateIsntNull.add(snackIsntNull)
         
         navigationController?.popViewController(animated: true)
     }
