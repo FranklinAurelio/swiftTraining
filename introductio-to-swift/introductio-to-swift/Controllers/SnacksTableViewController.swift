@@ -35,13 +35,14 @@ class SnackTableViewController: UITableViewController, AddSnackDelegate{
             guard let indexPath = tableView.indexPath(for: view) else{
                 return
             }
-            
             let longPressSnacks: Snack = snacks[indexPath.row]
             
-            let alertSnack: UIAlertController = UIAlertController(title: longPressSnacks.name, message: longPressSnacks.details(), preferredStyle: .alert)
-            let buttonCancel: UIAlertAction = UIAlertAction(title: "cancel", style: .cancel, handler: nil)
-            alertSnack.addAction(buttonCancel)
-            present(alertSnack, animated: true, completion: nil)
+            RemoveSnackViewController(controller: self).show(longPressSnacks, handler: {
+                alert in
+                self.snacks.remove(at: indexPath.row)
+                self.tableView.reloadData()
+            })
+           
                 // completion is configure action after show alert
             
         }
@@ -51,6 +52,8 @@ class SnackTableViewController: UITableViewController, AddSnackDelegate{
         snacks.append(snackIn)
         tableView.reloadData()
     }
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "add" {
