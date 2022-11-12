@@ -50,6 +50,18 @@ class SnackTableViewController: UITableViewController, AddSnackDelegate{
     
     func add(_ snackIn:Snack){
         snacks.append(snackIn)
+        
+        guard let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else{ return }
+        
+        let path = dir.appendingPathExtension("SnacksApplication")
+        
+        do{
+            let data = try NSKeyedArchiver.archivedData(withRootObject: snacks, requiringSecureCoding: false)
+            try data.write(to: path)
+        }catch{
+            print(error.localizedDescription)
+        }
+        
         tableView.reloadData()
     }
     

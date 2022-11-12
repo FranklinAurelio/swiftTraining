@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Snack: NSObject {
+class Snack: NSObject, NSCoding {
     var name:String
     var happynes:Int
     var itens:Array<Item> = []
@@ -32,5 +32,18 @@ class Snack: NSObject {
             message += ", \(item.nameItem) - calories:  \(item.calories) "
         }
         return message
+    }
+    
+    //MARK: NSCoding
+    func encode(with coder: NSCoder) {
+        coder.encode(name, forKey: "name")
+        coder.encode(happynes, forKey: "happynes")
+        coder.encode(itens, forKey: "itens")
+    }
+    
+    required init?(coder: NSCoder) {
+        name = coder.decodeObject(forKey: "name") as! String
+        happynes = coder.decodeInteger(forKey: "happynes")
+        itens = coder.decodeObject(forKey: "itens") as! Array<Item>
     }
 }
