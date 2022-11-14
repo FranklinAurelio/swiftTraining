@@ -18,10 +18,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var delegate: AddSnackDelegate?
     var itensMock:[String] = ["Shoyo","Pepper", "Salt", "Sugar" ]
     
-    var itens:[Item] = [Item(nameItemDeclaration: "Shoyo", caloriesDeclaration: 13),
-                        Item(nameItemDeclaration: "Pepper", caloriesDeclaration: 5.8),
-                        Item(nameItemDeclaration: "Salt", caloriesDeclaration: 12),
-                        Item(nameItemDeclaration: "Sugar", caloriesDeclaration: 40)]
+    var itens:[Item] = []
     
     var selectedItens: [Item] = []
     
@@ -34,6 +31,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         let buttonAddItem: UIBarButtonItem = UIBarButtonItem(title: "Add Item", style: .plain, target: self, action: #selector(AddItenButton))
         navigationItem.rightBarButtonItem = buttonAddItem
+        getItens()
+    }
+    
+    func getItens(){
+        itens = ItemDao().get()
     }
     
     @objc func AddItenButton(){
@@ -47,7 +49,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             return Alert(controller: self).showAlert(titleStr: "Sorry!", message: "could not update the list ")
         }
         addItemValue.reloadData()
+        ItemDao().save(itens)
+    
     }
+    
     
     //MARK: - UItableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

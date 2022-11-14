@@ -20,6 +20,8 @@
 		16DD2A6428B5754F00C71691 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16DD2A6328B5754F00C71691 /* Assets.xcassets */; };
 		16DD2A6728B5754F00C71691 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16DD2A6528B5754F00C71691 /* LaunchScreen.storyboard */; };
 		16F8E57A2919BE76006B7707 /* RemoveSnackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F8E5792919BE76006B7707 /* RemoveSnackViewController.swift */; };
+		16FCF64E2922740700CE1F15 /* SnacksDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FCF64D2922740700CE1F15 /* SnacksDao.swift */; };
+		16FCF6502922788000CE1F15 /* ItenDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FCF64F2922788000CE1F15 /* ItenDao.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		16DD2A6628B5754F00C71691 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		16DD2A6828B5754F00C71691 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16F8E5792919BE76006B7707 /* RemoveSnackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveSnackViewController.swift; sourceTree = "<group>"; };
+		16FCF64D2922740700CE1F15 /* SnacksDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnacksDao.swift; sourceTree = "<group>"; };
+		16FCF64F2922788000CE1F15 /* ItenDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItenDao.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,8 @@
 				16B4E8E728C38988001C9212 /* Snack.swift */,
 				16B4E8E928C38A0F001C9212 /* Item.swift */,
 				163A52BC2916B6DE00050F00 /* Alert.swift */,
+				16FCF64D2922740700CE1F15 /* SnacksDao.swift */,
+				16FCF64F2922788000CE1F15 /* ItenDao.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -187,12 +193,14 @@
 				16B4E8EA28C38A0F001C9212 /* Item.swift in Sources */,
 				16DD2A5F28B5754E00C71691 /* ViewController.swift in Sources */,
 				16DD2A5B28B5754E00C71691 /* AppDelegate.swift in Sources */,
+				16FCF6502922788000CE1F15 /* ItenDao.swift in Sources */,
 				16B4E8E828C38988001C9212 /* Snack.swift in Sources */,
 				16F8E57A2919BE76006B7707 /* RemoveSnackViewController.swift in Sources */,
 				160F353E28D6207A00EE6057 /* SnacksTableViewController.swift in Sources */,
 				1633161F28DA053D003B1AEA /* AddItensViewController.swift in Sources */,
 				163A52BD2916B6DE00050F00 /* Alert.swift in Sources */,
 				16DD2A5D28B5754E00C71691 /* SceneDelegate.swift in Sources */,
+				16FCF64E2922740700CE1F15 /* SnacksDao.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

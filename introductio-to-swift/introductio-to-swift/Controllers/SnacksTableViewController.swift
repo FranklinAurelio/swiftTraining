@@ -9,9 +9,11 @@ import Foundation
 import UIKit
 
 class SnackTableViewController: UITableViewController, AddSnackDelegate{
-    var snacks: [Snack] = [Snack(nameInit: "fish", happynesInit: 8),
-                           Snack(nameInit: "sushi", happynesInit: 7),
-                           Snack(nameInit: "temaki", happynesInit: 6)]
+    var snacks: [Snack] = []
+    
+    override func viewDidLoad() {
+        snacks = SnacksDao().get()
+    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return snacks.count
@@ -50,19 +52,8 @@ class SnackTableViewController: UITableViewController, AddSnackDelegate{
     
     func add(_ snackIn:Snack){
         snacks.append(snackIn)
-        
-        guard let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else{ return }
-        
-        let path = dir.appendingPathExtension("SnacksApplication")
-        
-        do{
-            let data = try NSKeyedArchiver.archivedData(withRootObject: snacks, requiringSecureCoding: false)
-            try data.write(to: path)
-        }catch{
-            print(error.localizedDescription)
-        }
-        
         tableView.reloadData()
+        SnacksDao().save( snacks)
     }
     
     
